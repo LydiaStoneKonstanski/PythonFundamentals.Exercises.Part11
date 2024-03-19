@@ -59,7 +59,12 @@ class ElementaryStudent(Student):
 class Classroom:
     def __init__(self, students, instructors):
         self.students = []
+        for student in students:
+            self.students.append(student)
+
         self.instructors = []
+        for instructor in instructors:
+            self.instructors.append(instructor)
 
 
     def add_instructor(self, instructor):
