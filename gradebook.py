@@ -6,21 +6,26 @@ class AliveStatus(Enum):
     DECEASED = 0
     ALIVE = 1
 
+
 class Person:
     def __init__(self, first_name, last_name, dob, alive):
         self.is_alive = alive
 
+
     def update_first_name(self, first_name):
-        pass
+        self.first_name = first_name
+
 
     def update_last_name(self, last_name):
-        pass
+        self.last_name = last_name
+
 
     def update_dob(self, dob):
-        pass
+        self.dob = dob
+
 
     def update_status(self, alive):
-        pass
+        self.alive = alive
 
 
 class Instructor(Person):
@@ -49,12 +54,17 @@ class ElementaryStudent(Student):
 
 class Classroom:
     def __init__(self, students, instructors):
-        self.students = students
-        self.instructors = instructors
+        self.students = []
+        for student in students:
+            self.students.append(students)
+
+        self.instructors = []
+        for instructor in instructors:
+            self.instructors.append(instructor)
 
 
-    def add_instructor(self):
-        pass
+    def add_instructor(self, instructor):
+        self.instructors.append(instructor)
 
 
     def remove_instructor(self):
@@ -62,7 +72,11 @@ class Classroom:
 
 
     def print_instructors(self):
-        print()
+        print(self.instructors)
+
+
+    def add_student(self, student):
+        self.students.append(student)
 
 
     def print_students(self):
