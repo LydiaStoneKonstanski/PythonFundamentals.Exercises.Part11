@@ -10,6 +10,10 @@ class AliveStatus(Enum):
 class Person:
     def __init__(self, first_name, last_name, dob, alive):
         self.is_alive = alive
+        self.first_name = first_name
+        self.last_name = last_name
+        self.dob = dob
+
 
 
     def update_first_name(self, first_name):
@@ -55,20 +59,15 @@ class ElementaryStudent(Student):
 class Classroom:
     def __init__(self, students, instructors):
         self.students = []
-        for student in students:
-            self.students.append(students)
-
         self.instructors = []
-        for instructor in instructors:
-            self.instructors.append(instructor)
 
 
     def add_instructor(self, instructor):
         self.instructors.append(instructor)
 
 
-    def remove_instructor(self):
-        pass
+    def remove_instructor(self, instructor):
+        self.instructors.remove(instructor)
 
 
     def print_instructors(self):
@@ -79,8 +78,12 @@ class Classroom:
         self.students.append(student)
 
 
+    def remove_student(self, student):
+        self.student.remove(student)
+
+
     def print_students(self):
-        print()
+        print(self.students)
 
 if __name__ == "__main__":
     is_alive = AliveStatus.ALIVE
